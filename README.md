@@ -3,7 +3,7 @@
 > **Zero-Friction Service-Job Accountability Protocol & Deterministic Payment Ledger for India's Informal Workforce**  
 > *VibeX Codes 2026 — Track 1: Daily Workers, Small Shopkeepers & Informal Workforce*
 
-[![VibeX Codes 2026](https://img.shields.io/badge/VibeX%20Codes-2026%20Track%201-047857?style=flat-square)](https://github.com)
+[![VibeX Codes 2026](https://img.shields.io/badge/VibeX%20Codes-2026%20Track%201-047857?style=flat-square)](https://github.com/JamalpureNikhil6/KaamProof)
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2.15%20App%20Router-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5%20Strict-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Tests Passing](https://img.shields.io/badge/Tests-27%2F27%20Passed-emerald?style=flat-square)](scripts/test-runner.js)
@@ -172,8 +172,8 @@ Exit code: 0
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd KaamProff
+git clone https://github.com/JamalpureNikhil6/KaamProof.git
+cd KaamProof
 
 # Install dependencies
 npm install
@@ -236,3 +236,4 @@ KaamProff/
 * **Track:** Track 1 — Daily Workers, Small Shopkeepers & Informal Workforce
 * **Core Scenario:** Electrician switchboard inspection, MCB replacement, ₹1,000 UPI advance tracking, before/after burnt busbar proof, customer sign-off, and ₹2,200 final balance settlement.
 * **License:** MIT License
+

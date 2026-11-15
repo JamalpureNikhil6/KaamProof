@@ -1,157 +1,5 @@
 [
   {
-    "id": "job_1794742409071_b93bd3",
-    "customerToken": "ctok_ca3c7524ca8eda04162f6110",
-    "title": "Main Distribution Board Rewiring & MCB Upgrade",
-    "category": "electrical",
-    "description": "Inspect frequent tripping of 32A main MCB, replace burnt neutral busbar, install 40A double-pole isolator, and rewire loose terminal connections.",
-    "customerName": "rahul",
-    "customerPhone": "9876543210",
-    "serviceAddress": "flat 402,iodsajfoiasiofj",
-    "agreedPrice": 3200,
-    "status": "pending_customer_confirm",
-    "expectedCompletionDate": "2026-11-16",
-    "createdAt": "2026-11-15T11:33:29.071Z",
-    "updatedAt": "2026-11-15T11:34:15.381Z",
-    "workerName": "Vikram Technician Services",
-    "workerPhone": "+91 98111 22334",
-    "evidence": [
-      {
-        "id": "ev_1794742455381_7b38c7",
-        "type": "after",
-        "title": "New 40A DP Isolator & clean neutral busbar installed",
-        "description": "Replaced burnt neutral bar, torqued all terminals, tested insulation resistance.",
-        "imageUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-11-15T11:34:15.381Z",
-        "uploadedBy": "worker"
-      }
-    ],
-    "payments": [],
-    "activityLog": [
-      {
-        "id": "act_1794742409071_1",
-        "timestamp": "2026-11-15T11:33:29.071Z",
-        "actor": "worker",
-        "actorName": "Vikram Technician Services",
-        "action": "JOB_CREATED",
-        "description": "Job agreement created for ₹3,200",
-        "metadata": {
-          "agreedPrice": 3200,
-          "category": "electrical"
-        }
-      },
-      {
-        "id": "act_1794742455381_ev",
-        "timestamp": "2026-11-15T11:34:15.381Z",
-        "actor": "worker",
-        "actorName": "Vikram Technician Services",
-        "action": "EVIDENCE_ADDED",
-        "description": "Added after evidence photo: \"New 40A DP Isolator & clean neutral busbar installed\"",
-        "metadata": {
-          "evidenceId": "ev_1794742455381_7b38c7",
-          "type": "after"
-        }
-      }
-    ]
-  },
-  {
-    "id": "job_1794741505976_b3b1cc",
-    "customerToken": "ctok_ac2fd3b3dcd639bf5b64f402",
-    "title": "Fixing slow water",
-    "category": "plumbing",
-    "description": "water pipe and seals",
-    "customerName": "nikhil",
-    "customerPhone": "9876543210",
-    "serviceAddress": "uppuguda,hyderabad",
-    "agreedPrice": 700,
-    "status": "pending_customer_review",
-    "expectedCompletionDate": "2026-11-16",
-    "createdAt": "2026-11-15T11:18:25.976Z",
-    "updatedAt": "2026-11-15T11:27:39.635Z",
-    "workerName": "Vikram Technician Services",
-    "workerPhone": "+91 98111 22334",
-    "evidence": [],
-    "payments": [
-      {
-        "id": "pay_adv_1794741505976",
-        "amount": 200,
-        "type": "advance",
-        "method": "upi",
-        "date": "2026-11-15T11:18:25.976Z",
-        "note": "parts purchase",
-        "recordedBy": "worker"
-      }
-    ],
-    "activityLog": [
-      {
-        "id": "act_1794741505976_1",
-        "timestamp": "2026-11-15T11:18:25.976Z",
-        "actor": "worker",
-        "actorName": "Vikram Technician Services",
-        "action": "JOB_CREATED",
-        "description": "Job agreement created for ₹700",
-        "metadata": {
-          "agreedPrice": 700,
-          "category": "plumbing"
-        }
-      },
-      {
-        "id": "act_1794741505976_2",
-        "timestamp": "2026-11-15T11:18:25.976Z",
-        "actor": "worker",
-        "actorName": "Vikram Technician Services",
-        "action": "PAYMENT_RECORDED",
-        "description": "Advance payment of ₹200 recorded via UPI",
-        "metadata": {
-          "amount": 200,
-          "type": "advance"
-        }
-      },
-      {
-        "id": "act_1794741583807_cust_confirm",
-        "timestamp": "2026-11-15T11:19:43.807Z",
-        "actor": "customer",
-        "actorName": "nikhil",
-        "action": "CUSTOMER_CONFIRMED",
-        "description": "Customer confirmed job agreement and price of ₹700",
-        "metadata": {
-          "note": ""
-        }
-      },
-      {
-        "id": "act_1794742054380_status",
-        "timestamp": "2026-11-15T11:27:34.380Z",
-        "actor": "worker",
-        "actorName": "Technician",
-        "action": "STATUS_UPDATED",
-        "description": "Status changed from confirmed to in progress: Technician commenced on-site work",
-        "metadata": {
-          "oldStatus": "confirmed",
-          "newStatus": "in_progress",
-          "note": "Technician commenced on-site work"
-        }
-      },
-      {
-        "id": "act_1794742059635_status",
-        "timestamp": "2026-11-15T11:27:39.635Z",
-        "actor": "worker",
-        "actorName": "Technician",
-        "action": "STATUS_UPDATED",
-        "description": "Status changed from in progress to pending customer review: Technician finished work and submitted before/after proof for customer review",
-        "metadata": {
-          "oldStatus": "in_progress",
-          "newStatus": "pending_customer_review",
-          "note": "Technician finished work and submitted before/after proof for customer review"
-        }
-      }
-    ],
-    "customerConfirmation": {
-      "confirmedAt": "2026-11-15T11:19:43.807Z",
-      "customerName": "nikhil",
-      "note": "Confirmed agreement terms"
-    }
-  },
-  {
     "id": "job_demo_elec_01",
     "customerToken": "ctok_elec_demo_9823f4a1",
     "title": "Main Distribution Board Rewiring & MCB Upgrade",
@@ -161,10 +9,10 @@
     "customerPhone": "+91 98765 43210",
     "serviceAddress": "Flat 402, Shanti Vihar Apartments, Sector 14, Gurgaon",
     "agreedPrice": 3200,
-    "status": "completed",
+    "status": "in_progress",
     "expectedCompletionDate": "2026-11-15",
     "createdAt": "2026-11-15T09:30:00.000Z",
-    "updatedAt": "2026-11-15T11:32:35.322Z",
+    "updatedAt": "2026-11-15T14:15:00.000Z",
     "workerName": "Vikram Electrician Services",
     "workerPhone": "+91 98111 22334",
     "evidence": [
@@ -229,78 +77,12 @@
         "actorName": "Vikram (Electrician)",
         "action": "STATUS_UPDATED",
         "description": "Status changed to In Progress"
-      },
-      {
-        "id": "act_1794742112571_status",
-        "timestamp": "2026-11-15T11:28:32.571Z",
-        "actor": "worker",
-        "actorName": "Technician",
-        "action": "STATUS_UPDATED",
-        "description": "Status changed from in progress to pending customer review: Technician finished work and submitted before/after proof for customer review",
-        "metadata": {
-          "oldStatus": "in_progress",
-          "newStatus": "pending_customer_review",
-          "note": "Technician finished work and submitted before/after proof for customer review"
-        }
-      },
-      {
-        "id": "act_1794742169188_comp_disp",
-        "timestamp": "2026-11-15T11:29:29.188Z",
-        "actor": "customer",
-        "actorName": "Ramesh Sharma",
-        "action": "COMPLETION_DISPUTED",
-        "description": "Customer raised a disagreement: \"not satisfied\"",
-        "metadata": {
-          "disputeReason": "not satisfied"
-        }
-      },
-      {
-        "id": "act_1794742342400_status",
-        "timestamp": "2026-11-15T11:32:22.400Z",
-        "actor": "worker",
-        "actorName": "Technician",
-        "action": "STATUS_UPDATED",
-        "description": "Status changed from disputed to in progress: Technician addressing customer concerns on-site",
-        "metadata": {
-          "oldStatus": "disputed",
-          "newStatus": "in_progress",
-          "note": "Technician addressing customer concerns on-site"
-        }
-      },
-      {
-        "id": "act_1794742346908_status",
-        "timestamp": "2026-11-15T11:32:26.908Z",
-        "actor": "worker",
-        "actorName": "Technician",
-        "action": "STATUS_UPDATED",
-        "description": "Status changed from in progress to pending customer review: Technician finished work and submitted before/after proof for customer review",
-        "metadata": {
-          "oldStatus": "in_progress",
-          "newStatus": "pending_customer_review",
-          "note": "Technician finished work and submitted before/after proof for customer review"
-        }
-      },
-      {
-        "id": "act_1794742355322_comp_appr",
-        "timestamp": "2026-11-15T11:32:35.322Z",
-        "actor": "customer",
-        "actorName": "Ramesh Sharma",
-        "action": "COMPLETION_APPROVED",
-        "description": "Customer inspected work and approved completion",
-        "metadata": {
-          "note": ""
-        }
       }
     ],
     "customerConfirmation": {
       "confirmedAt": "2026-11-15T09:45:00.000Z",
       "customerName": "Ramesh Sharma",
       "note": "Confirmed. Please ensure original Havells or Schneider parts are used."
-    },
-    "completionApproval": {
-      "approvedAt": "2026-11-15T11:32:35.322Z",
-      "customerName": "Ramesh Sharma",
-      "note": "Completion approved by customer"
     }
   }
 ]

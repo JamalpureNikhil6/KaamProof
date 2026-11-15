@@ -3,3 +3,10 @@ node_modules
 .env*.local
 *.log
 .DS_Store
+
+# Presentation files (edited by user)
+*.pdf
+*.pptx
+submission/slides.html
+submission/slides/
+
