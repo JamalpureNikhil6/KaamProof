@@ -144,7 +144,8 @@ async function runAllTests() {
     const data = JSON.parse(fs.readFileSync(TEST_DB_FILE, 'utf-8'));
     assert(Array.isArray(data), "Database contains valid array of jobs");
     assert(data.length >= 1, `Seed job loaded successfully (Found ${data.length} jobs)`);
-    const seed = data[0];
+    const seed = data.find((j) => j.id === "job_demo_elec_01") || data[0];
+    assert(Boolean(seed), "Seed job exists in database");
     assert(seed.id === "job_demo_elec_01", "Electrician demo seed job id matches");
     assert(seed.customerToken.startsWith("ctok_"), "Seed customer token valid");
     assert(seed.payments.length >= 1, "Seed job contains initial payment");

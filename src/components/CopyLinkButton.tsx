@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Copy, Check, ExternalLink } from 'lucide-react';
+import { Copy, Check, ExternalLink, Share2 } from 'lucide-react';
 import Link from 'next/link';
 
 interface CopyLinkButtonProps {
@@ -17,6 +17,11 @@ export function CopyLinkButton({ token, variant = 'button' }: CopyLinkButtonProp
       return `${window.location.origin}/confirm/${token}`;
     }
     return `/confirm/${token}`;
+  };
+
+  const getWhatsAppUrl = () => {
+    const text = `Namaste! Here is your official KaamProof service agreement link. Please review work scope and confirm: ${getFullUrl()}`;
+    return `https://wa.me/?text=${encodeURIComponent(text)}`;
   };
 
   const handleCopy = async () => {
@@ -61,8 +66,19 @@ export function CopyLinkButton({ token, variant = 'button' }: CopyLinkButtonProp
               }`}
             >
               {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-              <span>{copied ? 'Copied Link!' : 'Copy Link'}</span>
+              <span>{copied ? 'Copied!' : 'Copy'}</span>
             </button>
+
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors min-h-[38px]"
+              title="Share via WhatsApp"
+            >
+              <Share2 className="w-3.5 h-3.5" />
+              <span>WhatsApp</span>
+            </a>
 
             <Link
               href={`/confirm/${token}`}
@@ -93,6 +109,16 @@ export function CopyLinkButton({ token, variant = 'button' }: CopyLinkButtonProp
         {copied ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-[#52525B]" />}
         <span>{copied ? 'Copied' : 'Share Link'}</span>
       </button>
+
+      <a
+        href={getWhatsAppUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-1.5 text-emerald-600 hover:text-emerald-700 rounded-lg hover:bg-emerald-50 border border-transparent hover:border-emerald-200 transition-colors"
+        title="Share agreement via WhatsApp"
+      >
+        <Share2 className="w-3.5 h-3.5" />
+      </a>
 
       <Link
         href={`/confirm/${token}`}
