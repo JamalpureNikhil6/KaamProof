@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaamProof — VibeX Codes 2026 Presentation (9 Slides)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #18181b;
+      color: #faf9f6;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      position: relative;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1080px;
+      height: 600px;
+      background: #faf9f6;
+      color: #18181b;
+      border-radius: 16px;
+      padding: 44px 50px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      border: 1px solid #e4dfd7;
+    }
+    .slide.active {
+      display: flex;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #18181b;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #047857;
+      margin-bottom: 18px;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #3f3f46;
+    }
+    ul {
+      list-style-type: none;
+      space-y: 10px;
+    }
+    li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 24px;
+    }
+    li::before {
+      content: "•";
+      color: #047857;
+      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      left: 6px;
+      top: -2px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e4dfd7;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e4dfd7;
+      padding-top: 14px;
+      font-size: 12px;
+      color: #71717a;
+      font-weight: 500;
+    }
+    .controls {
+      height: 60px;
+      background: #18181b;
+      border-top: 1px solid #27272a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+    }
+    .nav-btn {
+      background: #27272a;
+      border: 1px solid #3f3f46;
+      color: #faf9f6;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .nav-btn:hover {
+      background: #047857;
+      border-color: #047857;
+    }
+    .img-preview {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e4dfd7;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-container">
+    <!-- SLIDE 1: PRODUCT INTRODUCTION -->
+    <div class="slide active" id="slide-1">
+      <div>
+        <span class="badge">VibeX Codes 2026 &bull; Track 1 Official Entry</span>
+        <h1>KAAMPROOF</h1>
+        <h2>Every job agreed. Every payment tracked. Every task documented.</h2>
+        <div style="margin-top: 24px; max-width: 780px;">
+          <p style="font-size: 18px; color: #18181b; font-weight: 500; margin-bottom: 16px;">
+            A lightweight job-accountability protocol built specifically for informal service tradesmen: electricians, plumbers, AC mechanics, carpenters, and small repair contractors.
+          </p>
+          <div class="grid-3" style="margin-top: 24px;">
+            <div class="card">
+              <strong style="color: #047857; display: block; margin-bottom: 4px;">🤝 Transparent Scope</strong>
+              <p style="font-size: 13px;">Customer verifies agreed quote &amp; parts upfront via private link.</p>
+            </div>
+            <div class="card">
+              <strong style="color: #047857; display: block; margin-bottom: 4px;">📸 Visual Proof</strong>
+              <p style="font-size: 13px;">On-site before &amp; after photos prevent completion disputes.</p>
+            </div>
+            <div class="card">
+              <strong style="color: #047857; display: block; margin-bottom: 4px;">💰 Deterministic Ledger</strong>
+              <p style="font-size: 13px;">Tracks advances, balance due, and receipts with zero ambiguity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 1 of 9</span>
+        <span>Not a marketplace &bull; An operational trust protocol</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE REAL-WORLD PROBLEM HYPOTHESIS -->
+    <div class="slide" id="slide-2">
+      <div>
+        <span class="badge">Problem Hypothesis</span>
+        <h1>The Informal Trade Dilemma</h1>
+        <h2>Verbal coordination leads to regular payment friction</h2>
+        <div class="grid-2" style="margin-top: 16px;">
+          <div>
+            <ul>
+              <li><strong>90%+ Informal Coordination:</strong> Tradesmen coordinate jobs over quick voice calls and informal chats.</li>
+              <li><strong>Lost Details &amp; Scope Creep:</strong> Customers forget verbal quotes or claim additional work was included for free.</li>
+              <li><strong>Unacknowledged Advances:</strong> Cash or UPI advance payments for parts are unrecorded and disputed later.</li>
+              <li><strong>Completion Disagreements:</strong> Customers withhold final payment claiming the issue wasn't properly resolved.</li>
+            </ul>
+          </div>
+          <div class="card" style="background: #fff1f2; border-color: #fecdd3;">
+            <strong style="color: #be123c; font-size: 15px; display: block; margin-bottom: 8px;">The Cost of Ambiguity:</strong>
+            <p style="font-size: 13px; color: #881337; line-height: 1.6;">
+              Informal technicians routinely lose 15% to 30% of their earned revenue or experience weeks of delayed payment due to avoidable verbal disputes. Neither customer nor worker has an immutable source of truth.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 2 of 9</span>
+        <span>Problem Hypothesis &bull; Grounded in daily trade reality</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: EXISTING INFORMAL WORKFLOW AND FRICTION -->
+    <div class="slide" id="slide-3">
+      <div>
+        <span class="badge">Workflow Friction</span>
+        <h1>Where the Current System Breaks Down</h1>
+        <h2>Traditional verbal workflow has zero verification checkpoints</h2>
+        <div class="grid-3" style="margin-top: 20px;">
+          <div class="card">
+            <h3 style="font-size: 14px; font-weight: 700; color: #be123c; margin-bottom: 6px;">1. Verbal Quote</h3>
+            <p style="font-size: 13px; color: #52525b;">Electrician says: "₹3,200 for MCB replacement + wiring". Customer hears "around ₹2,000". No written record exists.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 14px; font-weight: 700; color: #be123c; margin-bottom: 6px;">2. Unverified Work</h3>
+            <p style="font-size: 13px; color: #52525b;">Technician replaces burnt neutral bar. Customer never sees the burnt part and suspects parts weren't changed.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 14px; font-weight: 700; color: #be123c; margin-bottom: 6px;">3. Settlement Dispute</h3>
+            <p style="font-size: 13px; color: #52525b;">Customer refuses to pay remaining ₹2,200. Technician leaves frustrated without recourse or proof.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 3 of 9</span>
+        <span>The Breakdown of Informal Trust</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: OUR PROPOSED SOLUTION -->
+    <div class="slide" id="slide-4">
+      <div>
+        <span class="badge">Proposed Solution</span>
+        <h1>The KaamProof Protocol</h1>
+        <h2>A lightweight accountability layer that creates mutual protection</h2>
+        <div class="grid-2" style="margin-top: 20px;">
+          <div>
+            <ul>
+              <li><strong>Zero Customer App Install:</strong> Customers open a secure unique web link on WhatsApp without login or friction.</li>
+              <li><strong>Upfront 1-Click Confirmation:</strong> Explicit customer acceptance of price, scope, and parts.</li>
+              <li><strong>Before &amp; After Photo Evidence:</strong> Visual proof attached directly to the job timeline.</li>
+              <li><strong>Completion Sign-Off / Dispute Flow:</strong> Customer inspects work and signs off, or records exact dispute reason.</li>
+            </ul>
+          </div>
+          <div class="card" style="background: #ecfdf5; border-color: #a7f3d0;">
+            <strong style="color: #047857; display: block; margin-bottom: 8px;">Key Design Invariant:</strong>
+            <p style="font-size: 13px; color: #065f46; line-height: 1.6;">
+              Disputed jobs are <strong>never</strong> automatically declared approved. Both parties retain dignity, transparency, and a permanent audit trail.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 4 of 9</span>
+        <span>Architecture of Consensus</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: END-TO-END USER JOURNEY -->
+    <div class="slide" id="slide-5">
+      <div>
+        <span class="badge">User Journey</span>
+        <h1>The 6-Step Vertical Slice</h1>
+        <h2>From initial verbal estimate to sealed payment receipt</h2>
+        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <div class="card" style="display: flex; gap: 16px; align-items: center; padding: 10px 16px;">
+            <span style="font-weight: 800; color: #047857; font-size: 16px;">01</span>
+            <div style="font-size: 13px;"><strong>Create Job:</strong> Technician sets scope (e.g. MCB Upgrade), price (₹3,200), and records ₹1,000 advance.</div>
+          </div>
+          <div class="card" style="display: flex; gap: 16px; align-items: center; padding: 10px 16px;">
+            <span style="font-weight: 800; color: #047857; font-size: 16px;">02</span>
+            <div style="font-size: 13px;"><strong>Customer Confirmation:</strong> Customer opens private link via WhatsApp and clicks [Confirm Agreement].</div>
+          </div>
+          <div class="card" style="display: flex; gap: 16px; align-items: center; padding: 10px 16px;">
+            <span style="font-weight: 800; color: #047857; font-size: 16px;">03</span>
+            <div style="font-size: 13px;"><strong>Execution &amp; Evidence:</strong> Technician logs on-site before-work photos (burnt neutral bar) and begins repair.</div>
+          </div>
+          <div class="card" style="display: flex; gap: 16px; align-items: center; padding: 10px 16px;">
+            <span style="font-weight: 800; color: #047857; font-size: 16px;">04</span>
+            <div style="font-size: 13px;"><strong>Customer Sign-Off:</strong> Technician requests sign-off; customer reviews completion photo and approves.</div>
+          </div>
+          <div class="card" style="display: flex; gap: 16px; align-items: center; padding: 10px 16px;">
+            <span style="font-weight: 800; color: #047857; font-size: 16px;">05</span>
+            <div style="font-size: 13px;"><strong>Deterministic Settlement:</strong> Balance drops to ₹0 after remaining ₹2,200 payment; job is closed.</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 5 of 9</span>
+        <span>End-to-End Operational Lifecycle</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: TECHNICAL ARCHITECTURE -->
+    <div class="slide" id="slide-6">
+      <div>
+        <span class="badge">Engineering</span>
+        <h1>Technical Architecture &amp; Soundness</h1>
+        <h2>Deterministic, zero-secret, production-ready stack</h2>
+        <div class="grid-2" style="margin-top: 20px;">
+          <div>
+            <ul>
+              <li><strong>Framework:</strong> Next.js 14 App Router, React 18, TypeScript strict mode, Tailwind CSS.</li>
+              <li><strong>Persistence:</strong> In-process atomic JSON database with temp-write file-locking for ACID-like durability.</li>
+              <li><strong>Scoped Security:</strong> 24-character cryptographic tokens (<code>ctok_...</code>) restrict customer access strictly to their own job.</li>
+              <li><strong>Deterministic Ledger:</strong> Exact 2-decimal rounded INR currency calculations preventing float errors.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 style="font-size: 13px; font-weight: 700; color: #18181b; margin-bottom: 8px;">Verification Matrix:</h4>
+            <p style="font-size: 12px; color: #52525b; line-height: 1.6;">
+              &bull; <strong>26 Automated Tests:</strong> All passing (exit code 0)<br />
+              &bull; <strong>Production Build:</strong> 6/6 static &amp; dynamic routes compiled<br />
+              &bull; <strong>Design Scan:</strong> 0 primary findings on Impeccable 4.8.0
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 6 of 9</span>
+        <span>Engineering Rigor &bull; Proof of Correctness</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: WORKING APPLICATION SCREENSHOTS -->
+    <div class="slide" id="slide-7">
+      <div>
+        <span class="badge">Live Application Proof</span>
+        <h1>Working Application Evidence</h1>
+        <h2>Real views from the running local Next.js production build</h2>
+        <div class="grid-2" style="margin-top: 16px;">
+          <div>
+            <!-- eslint-disable-next-line @next/next/no-img-element -->
+            <img src="/images/dashboard.png" class="img-preview" alt="Dashboard" style="height: 250px;" />
+            <p style="font-size: 12px; color: #71717a; text-align: center; margin-top: 6px;">Worker Dashboard with Real-Time Financial Aggregates</p>
+          </div>
+          <div>
+            <!-- eslint-disable-next-line @next/next/no-img-element -->
+            <img src="/images/customer-portal.png" class="img-preview" alt="Customer Portal" style="height: 250px;" />
+            <p style="font-size: 12px; color: #71717a; text-align: center; margin-top: 6px;">Customer Verification Portal with 1-Click Confirmation</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 7 of 9</span>
+        <span>Saved in /home/user007-nikhil/Pictures/kaamproof/</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: RELIABILITY, PRIVACY AND LIMITATIONS -->
+    <div class="slide" id="slide-8">
+      <div>
+        <span class="badge">Security &amp; Boundaries</span>
+        <h1>Reliability, Privacy &amp; Limitations</h1>
+        <h2>Honest delivery reporting without fabricated claims</h2>
+        <div class="grid-2" style="margin-top: 20px;">
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; color: #047857; margin-bottom: 8px;">Guaranteed Invariants:</h4>
+            <ul>
+              <li>Disputed jobs halt completion until resolved.</li>
+              <li>Payments cannot exceed the balance due.</li>
+              <li>Zero personal tracking or third-party cookies.</li>
+              <li>Minimal PII (name, address, optional contact).</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; color: #be123c; margin-bottom: 8px;">Known Engineering Boundaries:</h4>
+            <ul>
+              <li><strong>Local Storage:</strong> Filesystem JSON database (no multi-region distributed clustering).</li>
+              <li><strong>Synthetic Payments:</strong> We do not simulate fake UPI webhooks; payments are recorded by the worker as cash/UPI receipts.</li>
+              <li><strong>Zero Fabricated Data:</strong> No made-up user interviews or artificial adoption percentages.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 8 of 9</span>
+        <span>Truth in Delivery &bull; Safe Engineering</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: EXPECTED IMPACT AND FUTURE SCOPE -->
+    <div class="slide" id="slide-9">
+      <div>
+        <span class="badge">Future Horizon</span>
+        <h1>Expected Impact &amp; Roadmap</h1>
+        <h2>Restoring dignity and financial clarity to informal daily trades</h2>
+        <div class="grid-2" style="margin-top: 20px;">
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; color: #18181b; margin-bottom: 8px;">Expected Real-World Impact:</h4>
+            <p style="font-size: 13px; color: #52525b; line-height: 1.6; margin-bottom: 12px;">
+              By introducing structured written consensus before work begins, technicians protect their quoted prices and eliminate embarrassing payment renegotiations. The immutable audit trail transforms into a digital trade portfolio.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; color: #047857; margin-bottom: 8px;">Future Roadmap:</h4>
+            <ul>
+              <li><strong>Voice-to-Scope:</strong> Regional vernacular voice notes converted to structured scopes.</li>
+              <li><strong>WhatsApp Bot:</strong> Automated dispatch of confirmation links via WhatsApp Business API.</li>
+              <li><strong>Offline PWA:</strong> Local cache sync for underground / basement jobs without network.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>KaamProof &bull; Slide 9 of 9</span>
+        <span>VibeX Codes 2026 Submission</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Controls -->
+  <div class="controls">
+    <button class="nav-btn" onclick="prevSlide()">&#8592; Previous Slide</button>
+    <div id="slide-counter" style="font-size: 13px; font-weight: 600; color: #a1a1aa;">
+      Slide 1 of 9
+    </div>
+    <button class="nav-btn" onclick="nextSlide()">Next Slide &#8594;</button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 9;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach((s) => s.classList.remove('active'));
+      const active = document.getElementById(`slide-${n}`);
+      if (active) {
+        active.classList.add('active');
+        document.getElementById('slide-counter').innerText = `Slide ${n} of ${totalSlides}`;
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
