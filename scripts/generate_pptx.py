@@ -19,8 +19,9 @@ slides_data = [
             "A lightweight, zero-friction service-job accountability system connecting work agreements, photographic evidence, customer confirmation, and deterministic payment tracking.",
             "Target Trade: Electricians, Plumbers, HVAC & Repair Technicians",
             "Zero Customer Friction: Instant 1-Click WhatsApp Link without app download",
-            "Implementation: Production Next.js 14 Build Verified (26/26 Tests Passing)"
-        ]
+            "Implementation: Production Next.js 14 Build Verified (27/27 Tests Passing)"
+        ],
+        "image_right": "/home/user007-nikhil/Desktop/KaamProff/public/images/dashboard.png"
     },
     {
         "title": "The Cost of Verbal Agreements in Informal Trade",
@@ -54,9 +55,9 @@ slides_data = [
             "Frontend: Next.js 14.2.15 App Router, React 18, Tailwind CSS (WCAG 2.1 AA compliant)",
             "Backend: Next.js Route Handlers in TypeScript Strict Mode",
             "Storage: Atomic File-Backed JSON in data/jobs.json with temp-write locking",
-            "Security: Scoped 24-char cryptographic tokens (ctok_*) for public customer access",
+            "Security: Scoped 29-char cryptographic tokens (ctok_*) for public customer access",
             "Ledger: Deterministic 2-decimal rupee precision math (Math.round)",
-            "Quality: 26 automated unit & integration tests passing with exit code 0"
+            "Quality: 27 automated unit & integration tests passing with exit code 0"
         ]
     },
     {
@@ -69,8 +70,8 @@ slides_data = [
             "Feature 03: On-Site Evidence Gallery — Device storage camera upload with before/after stage tags",
             "Feature 04: Formal Printable Receipt — Official completion certificate and payment settlement"
         ],
-        "image_left": "/home/user007-nikhil/Desktop/KaamProff/public/images/dashboard_clean.png",
-        "image_right": "/home/user007-nikhil/Desktop/KaamProff/public/images/customer_portal_clean.png"
+        "image_left": "/home/user007-nikhil/Desktop/KaamProff/public/images/dashboard.png",
+        "image_right": "/home/user007-nikhil/Desktop/KaamProff/public/images/customer_confirmation_portal.png"
     },
     {
         "title": "Bridging the Gap Between Job Acceptance & Payment Closure",
@@ -92,7 +93,7 @@ slides_data = [
             "Next Phase: Automated WhatsApp Business Cloud API notification bot",
             "Next Phase: Offline-First Service Worker PWA for basement/underground service sites",
             "Ecosystem: Exportable verified payment ledgers for micro-credit profiling & NBFC loans",
-            "Closing Statement: 'By replacing verbal ambiguity with verifiable consensus, KaamProof restores dignity, mutual trust, and financial certainty to millions of informal service workers.'"
+            "Closing Statement: 'KaamProof — Bringing clarity and accountability to every service job.'"
         ]
     }
 ]
@@ -126,12 +127,25 @@ for idx, slide_info in enumerate(slides_data):
     p_s.font.size = Pt(14)
     p_s.font.color.rgb = RGBColor(82, 82, 91)
     
-    # Body
-    if "image_left" in slide_info and os.path.exists(slide_info["image_left"]):
-        # Slide with images
+    # Body Layout
+    has_left = "image_left" in slide_info and os.path.exists(slide_info["image_left"])
+    has_right = "image_right" in slide_info and os.path.exists(slide_info["image_right"])
+
+    if has_left and has_right:
         slide.shapes.add_picture(slide_info["image_left"], Inches(0.8), Inches(2.3), width=Inches(5.7))
-        if "image_right" in slide_info and os.path.exists(slide_info["image_right"]):
-            slide.shapes.add_picture(slide_info["image_right"], Inches(6.8), Inches(2.3), width=Inches(5.7))
+        slide.shapes.add_picture(slide_info["image_right"], Inches(6.8), Inches(2.3), width=Inches(5.7))
+    elif has_right and not has_left:
+        # Split: Text on left, image on right
+        body_box = slide.shapes.add_textbox(Inches(0.8), Inches(2.3), Inches(6.2), Inches(4.2))
+        tf_body = body_box.text_frame
+        tf_body.word_wrap = True
+        for point in slide_info["content"]:
+            p = tf_body.add_paragraph()
+            p.text = "• " + point
+            p.font.size = Pt(15)
+            p.font.color.rgb = RGBColor(39, 39, 42)
+            p.space_after = Pt(14)
+        slide.shapes.add_picture(slide_info["image_right"], Inches(7.3), Inches(2.3), width=Inches(5.2))
     else:
         body_box = slide.shapes.add_textbox(Inches(0.8), Inches(2.3), Inches(11.5), Inches(4.2))
         tf_body = body_box.text_frame
