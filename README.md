@@ -3,11 +3,15 @@
 > **Zero-Friction Service-Job Accountability Protocol & Deterministic Payment Ledger for India's Informal Workforce**  
 > *VibeX Codes 2026 — Track 1: Daily Workers, Small Shopkeepers & Informal Workforce*
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-kaamproof--nine.vercel.app-047857?style=for-the-badge&logo=vercel)](https://kaamproof-nine.vercel.app/)
 [![VibeX Codes 2026](https://img.shields.io/badge/VibeX%20Codes-2026%20Track%201-047857?style=flat-square)](https://github.com/JamalpureNikhil6/KaamProof)
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2.15%20App%20Router-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5%20Strict-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
-[![Tests Passing](https://img.shields.io/badge/Tests-27%2F27%20Passed-emerald?style=flat-square)](scripts/test-runner.js)
+[![Tests Passing](https://img.shields.io/badge/Tests-26%2F26%20Passed-emerald?style=flat-square)](scripts/test-runner.js)
 [![WCAG AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-blue?style=flat-square)](src/app/globals.css)
+
+🌐 **Official Live Deployable URL:** [https://kaamproof-nine.vercel.app/](https://kaamproof-nine.vercel.app/)  
+📄 **Competition Presentation PDF (7 Slides):** [`submission/KaamProof_VibeX_Codes_2026.pdf`](submission/KaamProof_VibeX_Codes_2026.pdf)
 
 ---
 
