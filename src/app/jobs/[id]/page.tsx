@@ -25,6 +25,9 @@ import {
   Send,
   Eye,
   FileText,
+  UploadCloud,
+  FolderOpen,
+  Upload,
 } from 'lucide-react';
 
 interface EnrichedJob extends Job {
@@ -67,10 +70,53 @@ export default function JobDetailPage() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   // Evidence Form
+  const fileInputRef = React.useRef<HTMLInputElement | null>(null);
+  const [selectedFileName, setSelectedFileName] = useState('');
+  const [uploadingFile, setUploadingFile] = useState(false);
   const [evType, setEvType] = useState<'before' | 'after' | 'during'>('after');
   const [evTitle, setEvTitle] = useState('');
   const [evDesc, setEvDesc] = useState('');
   const [evImageUrl, setEvImageUrl] = useState('');
+
+  const handleDeviceFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setSelectedFileName(file.name);
+    if (!evTitle) {
+      const cleanName = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+      setEvTitle(cleanName.charAt(0).toUpperCase() + cleanName.slice(1));
+    }
+
+    // Try direct server upload, fallback to local FileReader base64
+    try {
+      setUploadingFile(true);
+      const formData = new FormData();
+      formData.append('file', file);
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success && data.url) {
+        setEvImageUrl(data.url);
+      } else {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setEvImageUrl(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      }
+    } catch {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setEvImageUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setUploadingFile(false);
+    }
+  };
 
   // Payment Form
   const [payAmount, setPayAmount] = useState('');
@@ -562,34 +608,63 @@ export default function JobDetailPage() {
               </button>
             </div>
 
-            {/* Presets */}
-            <div className="bg-[#FAF9F6] p-3 rounded-lg border border-[#E4DFD7]">
-              <span className="text-[11px] font-semibold text-[#52525B] block mb-1.5">
-                Quick Demo Presets:
-              </span>
-              <div className="flex flex-col gap-1.5">
-                {SAMPLE_EVIDENCE_PRESETS.map((preset, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => {
-                      setEvType(preset.type);
-                      setEvTitle(preset.title);
-                      setEvDesc(preset.description);
-                      setEvImageUrl(preset.imageUrl);
-                    }}
-                    className="text-left text-xs p-1.5 rounded hover:bg-[#E4DFD7] transition-colors flex items-center justify-between"
-                  >
-                    <span className="font-medium truncate">{preset.title}</span>
-                    <span className="text-[10px] uppercase font-mono px-1 rounded bg-zinc-200">
-                      {preset.type}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
             <form onSubmit={handleAddEvidence} className="space-y-3">
+              {/* Native Device File Input */}
+              <input
+                type="file"
+                ref={fileInputRef}
+                accept="image/*"
+                className="hidden"
+                onChange={handleDeviceFileSelect}
+              />
+
+              {/* Primary: Select Photo from Device Storage / Camera */}
+              <div>
+                <label className="block text-[11px] font-semibold uppercase text-[#52525B] mb-1">
+                  Upload Photo from Device Storage *
+                </label>
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  className={`border-2 border-dashed rounded-xl p-4 text-center cursor-pointer transition-all ${
+                    evImageUrl
+                      ? 'border-[#047857] bg-emerald-50/70'
+                      : 'border-[#E4DFD7] hover:border-[#047857] bg-[#FAF9F6] hover:bg-emerald-50/30'
+                  }`}
+                >
+                  {evImageUrl ? (
+                    <div className="flex items-center gap-3 text-left">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={evImageUrl}
+                        alt="Selected Preview"
+                        className="w-14 h-14 rounded-lg object-cover border border-[#E4DFD7] flex-shrink-0"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs font-bold text-emerald-800 flex items-center gap-1">
+                          ✓ Photo Selected from Device
+                        </span>
+                        <p className="text-[11px] text-[#52525B] truncate font-mono">
+                          {selectedFileName || 'device_captured_photo.jpg'}
+                        </p>
+                        <span className="text-[11px] text-[#047857] font-semibold underline mt-0.5 inline-block">
+                          Click to choose a different photo
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="py-2">
+                      <UploadCloud className="w-8 h-8 text-[#047857] mx-auto mb-1.5" />
+                      <span className="text-xs font-bold text-[#18181B] block">
+                        Tap here to Choose Photo from Device Storage / Camera
+                      </span>
+                      <span className="text-[11px] text-[#71717A]">
+                        Supports JPG, PNG, WEBP from your phone files or gallery
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
               <div>
                 <label className="block text-[11px] font-semibold uppercase text-[#52525B] mb-1">
                   Evidence Stage
@@ -619,7 +694,7 @@ export default function JobDetailPage() {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Neutral busbar repaired and tightened"
+                  placeholder="e.g. Burnt neutral busbar or New MCB installed"
                   value={evTitle}
                   onChange={(e) => setEvTitle(e.target.value)}
                   className="w-full text-xs px-3 py-2 bg-[#FAF9F6] border border-[#E4DFD7] rounded-lg"
@@ -628,7 +703,7 @@ export default function JobDetailPage() {
 
               <div>
                 <label className="block text-[11px] font-semibold uppercase text-[#52525B] mb-1">
-                  Description / Observations
+                  Description / Observations (Optional)
                 </label>
                 <textarea
                   rows={2}
@@ -639,19 +714,42 @@ export default function JobDetailPage() {
                 />
               </div>
 
-              <div>
-                <label className="block text-[11px] font-semibold uppercase text-[#52525B] mb-1">
-                  Image URL / Cloud Link *
-                </label>
-                <input
-                  type="url"
-                  required
-                  placeholder="https://..."
-                  value={evImageUrl}
-                  onChange={(e) => setEvImageUrl(e.target.value)}
-                  className="w-full text-xs px-3 py-2 bg-[#FAF9F6] border border-[#E4DFD7] rounded-lg"
-                />
-              </div>
+              {/* Demo presets or external URL option */}
+              <details className="text-xs text-[#71717A] pt-1">
+                <summary className="cursor-pointer hover:text-[#18181B] font-medium text-[11px]">
+                  + Or use demo presets / paste external image URL
+                </summary>
+                <div className="space-y-2 mt-2 pt-2 border-t border-[#E4DFD7]">
+                  <div className="flex flex-col gap-1">
+                    {SAMPLE_EVIDENCE_PRESETS.map((preset, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          setEvType(preset.type);
+                          setEvTitle(preset.title);
+                          setEvDesc(preset.description);
+                          setEvImageUrl(preset.imageUrl);
+                          setSelectedFileName('Demo Preset Photo');
+                        }}
+                        className="text-left text-xs p-1.5 rounded hover:bg-[#E4DFD7] transition-colors flex items-center justify-between"
+                      >
+                        <span className="font-medium truncate">{preset.title}</span>
+                        <span className="text-[10px] uppercase font-mono px-1 rounded bg-zinc-200">
+                          {preset.type}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                  <input
+                    type="url"
+                    placeholder="https://..."
+                    value={evImageUrl.startsWith('data:') || evImageUrl.startsWith('/uploads/') ? '' : evImageUrl}
+                    onChange={(e) => setEvImageUrl(e.target.value)}
+                    className="w-full text-xs px-3 py-1.5 bg-[#FAF9F6] border border-[#E4DFD7] rounded-lg"
+                  />
+                </div>
+              </details>
 
               <div className="pt-3 flex justify-end gap-2">
                 <button
