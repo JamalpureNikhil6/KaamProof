@@ -10,3 +10,4 @@ node_modules
 submission/slides.html
 submission/slides/
 
+*.tsbuildinfo
